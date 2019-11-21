@@ -5,7 +5,7 @@
     $dbpwd = getenv("databasepassword");
     $dbname = getenv("databasename");
     // conectar al servidor de BD
-    $conex = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
+    $conex = mysql_connect($dbhost,$dbuser,$dbpwd);
     // controlar conexión
     if (!$conex) {
         header("Location: errorPage.php?MSG=NO se pudo CONECTAR al SERVIDOR de Base de Datos");
